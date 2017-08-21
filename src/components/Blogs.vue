@@ -1,10 +1,10 @@
 <template>
-  <div class="products">
+  <div class="blogs">
     Products
 
     <ul>
-      <li v-for="product in products">
-        <router-link>{{product.name}}</router-link>
+      <li v-for="blog in blogs">
+        <router-link>{{blog.name}}</router-link>
       </li>
     </ul>
 
@@ -13,14 +13,14 @@
 
 <script>
   export default {
-    name: 'products',
+    name: 'blogs',
     data() {
       return {
         msg: 'Welcome to Your Vue.js App'
       }
     },
     mounted() {
-      console.log("on about page")
+      console.log("on Blogs Home page")
     }
   }
 </script>

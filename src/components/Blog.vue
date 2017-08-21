@@ -1,19 +1,19 @@
 <template>
-        <div class="product">
+        <div class="blog">
           about
         </div>
       </template>
       
       <script>
         export default {
-          name: 'product',
+          name: 'blog',
           data() {
             return {
               msg: 'Welcome to Your Vue.js App'
             }
           },
           mounted() {
-            console.log(this.$route.params.productId)
+            console.log(this.$route.params.blogId)
           }
         }
       </script>

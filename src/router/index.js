@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import Products from '@/components/Products'
-import Product from '@/components/Product'
+import Blogs from '@/components/Blogs'
+import Blog from '@/components/Blog'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     { path: '/', name: 'Home', component: Home },
-    { path: '/products', name: 'Products', component: Products },
-    { path: '/products/:productId', name: 'Product', component: Product }
+    { path: '/blogs', name: 'Blogs', component: Blogs },
+    { path: '/blogs/:blogsId', name: 'Blog', component: Blog }
   ]
 })
 
