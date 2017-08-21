@@ -21,7 +21,7 @@ let store = {
         $.get("//localhost:3000/api/blogs")
             .then((data) => {
                 state.blogArr = data
-                cb(state.blogArr)
+                 cb(state.blogArr)
             })
     },
     

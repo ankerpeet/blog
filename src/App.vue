@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <div>
-      <router-link :to="{name: 'Home'}">Home</router-link>
-      <router-link :to="{name: 'Blogs'}">Blogs</router-link>
+      <router-link class ="blog-title" :to="{name: 'Blog', params:{id: blog._id}}">Blog Central</router-link>
     </div>
     <router-view></router-view>
     <div>FOOTER</div>
@@ -23,5 +22,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.blog-title{
+  font-size:4rem;
+  text-decoration:none;
+  color:navy;
 }
 </style>

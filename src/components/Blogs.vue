@@ -1,26 +1,32 @@
 <template>
   <div class="blogs">
-    Products
 
-    <ul>
-      <li v-for="blog in blogs">
-        <router-link>{{blog.name}}</router-link>
-      </li>
-    </ul>
+      <div v-for="blog in blogs">
+       <h2> <router-link :to="{name: 'Blog'}">{{blog.title}}</router-link></h2>
+       <p>{{blog.body}}</p>
+        
+      </div>
 
   </div>
 </template>
 
 <script>
+
+  import { store } from '../store'
   export default {
     name: 'blogs',
     data() {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        blogs:[]        
       }
     },
+    methods: {
+    getBlogs(res){
+      this.blogs = res
+    }
+    },
     mounted() {
-      console.log("on Blogs Home page")
+        store.getBlogs(this.getBlogs) 
     }
   }
 </script>
