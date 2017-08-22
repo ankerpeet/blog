@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <div>
-      <router-link class ="blog-title" :to="{name: 'Blog', params:{id: blog._id}}">Blog Central</router-link>
-    </div>
+    <div>Header</div>
     <router-view></router-view>
     <div>FOOTER</div>
   </div>

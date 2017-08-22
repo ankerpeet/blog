@@ -8,7 +8,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     { path: '/', name: 'Blogs', component: Blogs },
-    { path: '/blogs/:blogsId', name: 'Blog', component: Blog }
+    { path: '/blogs/:id', name: 'Blog', component: Blog }
   ]
 })
 

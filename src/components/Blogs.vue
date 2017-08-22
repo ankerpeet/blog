@@ -1,12 +1,9 @@
 <template>
   <div class="blogs">
-
       <div v-for="blog in blogs">
-       <h2> <router-link :to="{name: 'Blog'}">{{blog.title}}</router-link></h2>
+       <h2> <router-link :to="{name: 'Blog', params:{id: blog._id}}">{{blog.title}}</router-link></h2>
        <p>{{blog.body}}</p>
-        
       </div>
-
   </div>
 </template>
 
