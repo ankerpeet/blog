@@ -2,7 +2,7 @@
     <div class="create">
         <form @submit.prevent="createBlog()">
             <input type="text" v-model="blog.title" placeholder="Title">
-            <div><textarea class="body-input" type="text" v-model="blog.body" cols="30" rows="10"></textarea></div>
+            <wysiwyg v-model="blog.body" />
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
     </div>
@@ -22,7 +22,12 @@
         },
         methods: {
             createBlog() {
-                store.createBlog(this.blog);
+                this.$store.dispatch("createBlog", this.blog)//createBlog will be a method in the store
+            }
+        },
+        computed: {
+            blogs() {
+                return this.$store.state.blogs
             }
         }
     }
@@ -36,7 +41,10 @@
         justify-content: space-between;
         align-items: center;
     }
+
     .body-input {
+        margin: 25px 0 25px 0;
+        width: 100%;
         max-width: 100%;
         min-height: 200px;
     }

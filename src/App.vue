@@ -16,6 +16,7 @@ export default {
 
 <style>
   @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+  @import "~vue-wysiwyg/dist/vueWysiwyg.css";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   margin-top: 60px;

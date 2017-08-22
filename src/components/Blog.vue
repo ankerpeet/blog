@@ -1,7 +1,7 @@
 <template>
   <div class="blog">
     <h2>{{blog.title}}</h2>
-    <p>{{blog.body}}</p>
+    <p v-html="blog.body"></p>
   </div>
 </template>
 
@@ -11,16 +11,15 @@
     name: 'blog',
     data() {
       return {
-        blog: ""
-      }
-    },
-    methods: {
-      getBlog(res){
-        this.blog = res
       }
     },
     mounted() {
-      store.getBlog((this.$route.params.id), (this.getBlog))
+      this.$store.dispatch('getBlog', this.$route.params.id)
+    },
+    computed: {
+      blog() {
+        return this.$store.state.activeBlog
+      }
     }
   }
 

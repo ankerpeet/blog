@@ -6,7 +6,7 @@
           <h4>{{blog.date}}</h4>
         </div>
         <div class="col-xs-9">
-          <p>{{blog.body}}... <router-link :to="{name: 'Blog', params:{id: blog._id}}">Read More</router-link></p>
+          <p v-html="blog.body">... <router-link :to="{name: 'Blog', params:{id: blog._id}}">Read More</router-link></p>
         </div>
       </div>
   </div>
@@ -18,17 +18,18 @@
   export default {
     name: 'blogs',
     data() {
-      return {
-        blogs:[]        
+      return {     
       }
     },
     methods: {
-    getBlogs(res){
-      this.blogs = res
-    }
     },
     mounted() {
-        store.getBlogs(this.getBlogs) 
+        this.$store.dispatch("getBlogs") 
+    },
+    computed:{
+      blogs(){
+        return this.$store.state.blogs
+      }
     }
   }
 </script>
