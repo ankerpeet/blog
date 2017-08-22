@@ -1,8 +1,10 @@
 <template>
-  <div id="app">
-    <div>Header</div>
+  <div class="container" id="app">
+    <div>
+      <router-link :to="{name: 'Blogs'}">Home</router-link> | 
+      <router-link :to="{name: 'Create'}">Write Post</router-link>
+    </div>
     <router-view></router-view>
-    <div>FOOTER</div>
   </div>
 </template>
 
@@ -13,12 +15,9 @@ export default {
 </script>
 
 <style>
+  @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
 }
 

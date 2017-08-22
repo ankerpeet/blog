@@ -20,11 +20,18 @@ let store = {
     getBlogs(cb) {
         $.get("//localhost:3000/api/blogs")
             .then((data) => {
+                //Set array equal to response data(blogs)
                 state.blogArr = data
-                 cb(state.blogArr)
+                //Manipulate date and body to become preview length
+                state.blogArr.forEach(blog => {
+                    blog.body = blog.body.slice(0, 200)
+                    blog.date = blog.date.split(" ")
+                    blog.date = blog.date.splice(0,4).join(" ")
+                })
+                cb(state.blogArr)
             })
     },
-    
+
     getBlog(id, cb) {
         $.get("//localhost:3000/api/blogs/" + id)
             .then((data) => {
